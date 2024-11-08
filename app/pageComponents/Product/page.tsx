@@ -23,10 +23,10 @@
 'use client'
 
 import Image from 'next/image'
-import Music from '@/app/images/music.jpeg'
-import Maths from '@/app/images/maths.jpeg'
-import Dance from '@/app/images/regular-dance-classes.jpg'
-import Music2  from '@/app/images/music2.jpeg'
+import Music from '@/app/images/parking1.jpg'
+import Maths from '@/app/images/parking1.jpg'
+import Dance from '@/app/images/parknd.jpg'
+import Music2  from '@/app/images/parknd.jpg'
 
 
 
@@ -36,8 +36,8 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
 
 const product = {
-  name: 'Tuitions',
-  price: '₹352',
+  name: 'Parking SPOT ',
+  price: '₹32',
   href: '#',
   breadcrumbs: [
     { id: 1, name: '1km', href: '#' },
@@ -71,15 +71,15 @@ const product = {
      
   ],
   description:
-    ' Tuitons for All ages and lorem ipsum and what not . Some random Description goes here and there so that it looks full and the size can be done',
+    ' Parking Space for all come here and get ur car in park',
   highlights: [
-    'Good Tuition',
-    'Very Good Tuition',
+    'Good Parking',
+    'Very Good Security',
     'Very Very Good ',
     
   ],
   details:
-    ' This is the Best Tuition ever.',
+    ' This is the Best Parking ever.',
 }
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
@@ -204,8 +204,8 @@ export default function Example() {
               <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Time Schedule</h3>
-                  <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                  See Related Products
+                  <a href="/search" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                  See Nearby Parkings
                   </a>
                 </div>
 

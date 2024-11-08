@@ -1,22 +1,22 @@
 import React from 'react';
 import ItemGrid from '@/app/pageComponents/ItemGrid/ItemGrid';
 import Header from '@/app/pageComponents/Header/page';
-import MathTuition from '@/app/images/event1.jpeg';
+import MathTuition from '@/app/images/maps.jpeg';
 
 interface EventItem {
   id: number;
   title: string;
   imageUrl: string;
 }
-
 const eventNames = [
-  "Math Tuition", "Music Fest", "Art Expo", "Tech Summit", "Food Carnival",
-  "Literature Fair", "Film Festival", "Fashion Week", "Dance Marathon", "Science Conference",
-  "Comedy Night", "Wine Tasting", "Street Parade", "Rock Concert", "Theater Show",
-  "Craft Market", "Book Signing", "Marathon Run", "Startup Pitch", "Gaming Expo",
-  "Photography Workshop", "Cultural Gathering", "Charity Ball", "Eco Forum", "Magic Show",
-  "Stand-up Comedy", "Poetry Slam", "Opera Night", "Jazz Evening", "Holiday Market"
+  "Cubbon Park", "Lalbagh Botanical Garden", "UB City", "Orion Mall", "Bannerghatta National Park",
+  "Commercial Street", "Brigade Road", "ISKCON Temple", "M.G. Road", "Vidhana Soudha",
+  "Chitrakala Parishath", "Ranga Shankara", "National Gallery of Modern Art", "Phoenix Marketcity", "Innovative Film City",
+  "Indiranagar 100 Feet Road", "Bangalore Palace", "Visvesvaraya Industrial & Technological Museum", "Wonderla Amusement Park", "Forum Mall Koramangala",
+  "Jawaharlal Nehru Planetarium", "Toit Brewpub", "Skyye Lounge", "Church Street", "Artisans Cafe",
+  "Chowdiah Memorial Hall", "Koshy's Restaurant", "St. Mark's Cathedral", "Christ University Auditorium", "Russell Market"
 ];
+
 
 const items: EventItem[] = eventNames.map((name, index) => ({
   id: index + 1,

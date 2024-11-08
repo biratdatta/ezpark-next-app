@@ -38,7 +38,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items }) => {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-h-[80vh] overflow-y-auto">
         {filteredItems.map(item => (
-          <Link key={item.id} href="/eventspage" passHref>
+          <Link key={item.id} href="/product" passHref legacyBehavior>
             <a
               className={`relative overflow-hidden ${colors[item.id % colors.length]} rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer h-56`}
             >
