@@ -9,8 +9,8 @@ import Parking from '@/app/images/parking1.jpg'
 import toast, { Toaster } from 'react-hot-toast';
 
 const productData = {
-  '/path1': {
-    name: 'Parking Spot A',
+  '/product/1': {
+    name: 'BTM LAYOUT',
      googleMapsLink: 'https://www.google.com/maps/place/Parking+Spot+A',
     price: '₹32',
     images: [
@@ -32,7 +32,7 @@ const productData = {
     reviews: { average: 4, totalCount: 117 },
   },
   '/product/2': {
-    name: 'Parking Spot B',
+    name: 'HSR LAYOUT',
     price: '₹34',
     googleMapsLink: 'https://www.google.com/maps/place/Parking+Spot+A',
     images: [
