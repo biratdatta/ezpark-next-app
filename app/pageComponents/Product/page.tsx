@@ -6,10 +6,12 @@ import { useState, useEffect } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import { StarIcon } from '@heroicons/react/20/solid';
 import Parking from '@/app/images/parking1.jpg'
+import toast, { Toaster } from 'react-hot-toast';
 
 const productData = {
   '/path1': {
     name: 'Parking Spot A',
+     googleMapsLink: 'https://www.google.com/maps/place/Parking+Spot+A',
     price: '₹32',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -32,6 +34,7 @@ const productData = {
   '/product/2': {
     name: 'Parking Spot B',
     price: '₹34',
+    googleMapsLink: 'https://www.google.com/maps/place/Parking+Spot+A',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
       { src: '/images/parking2.jpg', alt: 'Image 2' },
@@ -66,8 +69,14 @@ export default function ProductPage() {
     setSelectedSize(product.sizes.find((size) => size.inStock) || product.sizes[0]);
   }, [pathname]);
 
+    const handleBooking = () => {
+    toast.success('Time slot booked successfully!');
+  };
+
+
   return (
     <div className="bg-white">
+      <Toaster/>
       <div className="pt-6">
         <div className="mx-auto max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
@@ -165,14 +174,20 @@ export default function ProductPage() {
               </div>
             </RadioGroup>
 
+       <button
+          onClick={handleBooking}
+          className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+          Book your Time Slot
+        </button>
             <a
-              href="https://calendar.app.google/7ZMnbQh8of3Pjf1q7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Book your Time Slot
-            </a>
+          href={product.googleMapsLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-8 py-3 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-offset-2"
+        >
+          View on Google Maps
+        </a>
           </div>
         </div>
       </div>
