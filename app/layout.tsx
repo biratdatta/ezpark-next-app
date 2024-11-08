@@ -29,7 +29,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <header className="flex justify-between p-4">
-            <h1 className="font-bold">EzPark</h1>
+            <h1 className="font-bold"></h1>
             <UserButton showName />
           </header>
           <main>
