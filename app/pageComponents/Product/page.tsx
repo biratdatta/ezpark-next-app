@@ -69,8 +69,8 @@ export default function ProductPage() {
     setSelectedSize(product.sizes.find((size) => size.inStock) || product.sizes[0]);
   }, [pathname]);
 
-    const handleBooking = () => {
-    toast.success('Time slot booked successfully!');
+  const handleBooking = () => {
+    toast.success(`Booked ${selectedSize.name} at ${product.name} for ${product.price}`);
   };
 
 
