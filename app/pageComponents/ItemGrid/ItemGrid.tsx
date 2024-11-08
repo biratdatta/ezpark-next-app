@@ -6,7 +6,9 @@ import Link from 'next/link';
 
 interface GridItem {
   id: number;
-  title: string;
+  title: string;      // Unique title for each parking spot
+  placeName: string;   // Shared place name for multiple spots
+  placeNumber: string;
   imageUrl: string;
 }
 
@@ -22,15 +24,18 @@ const colors = [
 const ItemGrid: React.FC<ItemGridProps> = ({ items }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Filter items based on search term matching either title or placeName
   const filteredItems = items.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.placeName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.placeNumber.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="p-4">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search by spot title, place name, or place number..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
@@ -50,10 +55,13 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items }) => {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 flex items-end p-2 bg-black bg-opacity-30">
-                <h3 className="text-white text-2xl font-bold text-center truncate w-full">
+              <div className="absolute inset-0 flex flex-col items-center justify-end p-2 bg-black bg-opacity-30">
+                <h3 className="text-white text-xl font-bold truncate w-full text-center">
                   {item.title}
                 </h3>
+                <p className="text-white text-sm text-center">
+                  {item.placeName} {/* Display the place name */}
+                </p>
               </div>
             </a>
           </Link>
