@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from '@/app/pageComponents/Product/page'
-import Header from '../pageComponents/Header/page'
+import Header from '../../pageComponents/Header/page'
 
 const Page = () => {
   return (

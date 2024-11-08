@@ -1,3 +1,4 @@
+// ItemGrid Component (Updated)
 'use client';
 
 import React, { useState } from 'react';
@@ -6,8 +7,8 @@ import Link from 'next/link';
 
 interface GridItem {
   id: number;
-  title: string;      // Unique title for each parking spot
-  placeName: string;   // Shared place name for multiple spots
+  title: string;
+  placeName: string;
   placeNumber: string;
   imageUrl: string;
 }
@@ -17,14 +18,13 @@ interface ItemGridProps {
 }
 
 const colors = [
-  'bg-orange-500', 'bg-green-500', 'bg-red-500', 'bg-blue-500', 
+  'bg-orange-500', 'bg-green-500', 'bg-red-500', 'bg-blue-500',
   'bg-purple-500', 'bg-yellow-500', 'bg-teal-500', 'bg-pink-500'
 ];
 
 const ItemGrid: React.FC<ItemGridProps> = ({ items }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter items based on search term matching either title or placeName
   const filteredItems = items.filter(item =>
     item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     item.placeName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -40,10 +40,9 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
       />
-
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-h-[80vh] overflow-y-auto">
         {filteredItems.map(item => (
-          <Link key={item.id} href="/product" passHref legacyBehavior>
+          <Link key={item.id} href={`/product/${item.id}`} passHref legacyBehavior>
             <a
               className={`relative overflow-hidden ${colors[item.id % colors.length]} rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer h-56`}
             >
@@ -56,12 +55,8 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items }) => {
                 priority
               />
               <div className="absolute inset-0 flex flex-col items-center justify-end p-2 bg-black bg-opacity-30">
-                <h3 className="text-white text-xl font-bold truncate w-full text-center">
-                  {item.title}
-                </h3>
-                <p className="text-white text-sm text-center">
-                  {item.placeName} {/* Display the place name */}
-                </p>
+                <h3 className="text-white text-xl font-bold truncate w-full text-center">{item.title}</h3>
+                <p className="text-white text-sm text-center">{item.placeName}</p>
               </div>
             </a>
           </Link>

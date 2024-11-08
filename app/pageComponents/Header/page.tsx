@@ -22,7 +22,15 @@ export default function Header() {
   const pathname = usePathname()  
 
  
-  const navbarOnlyRoutes = ['/feedback', '/product', '/pricing', '/eventspage', '/search']  
+  const navbarOnlyRoutes = [
+  '/feedback',
+  '/product',  
+  '/product/2',  
+  '/product/1',  
+  '/pricing',
+  '/eventspage',
+  '/search'
+]
 
   return (
     <div className="bg-white">
