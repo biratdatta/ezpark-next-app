@@ -6,11 +6,25 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   {
-    question: "What's the best thing about Paramarsh?",
+    question: "What's the best thing about EzParking?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "EzParking provides a better Parking Solution ",
   },
-  // More questions...
+  {
+    question: 'How do I get started?',
+    answer:
+      'You can get started by signing up for a free account and start using the service.',
+  },
+  {
+    question: 'Can I use EzParking for my business?',
+    answer:
+      'Yes, you can use EzParking for your business. We have a special plan for businesses.',
+  },
+  {
+    question: 'How do I get in touch with support?',
+    answer:
+      'You can get in touch with support by sending an email to get support'}
+   
 ]
 
 export default function Example() {

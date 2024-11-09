@@ -9,7 +9,7 @@ import './styles.css'; // Import the CSS file
 
 const features = [
   {
-    name: 'Faster Engagement',
+    name: 'Eazy Access',
     description:
       'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
     icon: DocumentMagnifyingGlassIcon,
@@ -21,7 +21,7 @@ const features = [
     icon: UserGroupIcon,
   },
   {
-    name: 'Simple Stuff',
+    name: 'Available Time Slots',
     description:
       'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
     icon: ArrowPathIcon,
@@ -41,7 +41,7 @@ export default function Grid() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600"> </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to get your Child on Track
+            Ezy-Parking is a parking service with awesome features
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
