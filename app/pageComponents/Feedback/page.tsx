@@ -1,5 +1,3 @@
-// src/components/Feedback.tsx
-
 "use client";
 import React, { useState } from 'react';
 import { StarIcon } from '@heroicons/react/24/solid';
@@ -9,11 +7,37 @@ const Feedback = () => {
   const [email, setEmail] = useState('');
   const [rating, setRating] = useState<number | null>(null);
   const [review, setReview] = useState('');
+  const [message, setMessage] = useState<string | null>(null); // For success/error messages
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-   
-    console.log({ name, email, rating, review });
+
+    const feedbackData = { name, email, rating, review };
+
+    try {
+      const response = await fetch('http://localhost:3001/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(feedbackData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        setMessage(result.message); // Display success message
+        // Reset form fields after successful submission
+        setName('');
+        setEmail('');
+        setRating(null);
+        setReview('');
+      } else {
+        setMessage('Failed to submit feedback. Please try again.'); // Handle failure
+      }
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      setMessage('An error occurred. Please try again.');
+    }
   };
 
   return (
@@ -53,8 +77,6 @@ const Feedback = () => {
                 className={`focus:outline-none transition duration-200 ${
                   rating && rating >= star ? 'text-yellow-500' : 'text-gray-400'
                 }`}
-                onMouseEnter={() => setRating(star)}
-                onMouseLeave={() => setRating(null)}
               >
                 <StarIcon className="h-8 w-8" />
               </button>
@@ -79,6 +101,7 @@ const Feedback = () => {
           Submit
         </button>
       </form>
+      {message && <p className="mt-4 text-center text-gray-700">{message}</p>} {/* Display feedback message */}
     </div>
   );
 };
