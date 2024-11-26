@@ -7,32 +7,33 @@ import {
 } from '@heroicons/react/24/outline';
 import './styles.css'; // Import the CSS file
 
-const features = [
+ const features = [
   {
-    name: 'Eazy Access',
+    name: 'Easy Access',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+      'Seamlessly find and book services with our user-friendly interface. No more hassle—access everything you need in just a few clicks.',
     icon: DocumentMagnifyingGlassIcon,
   },
   {
-    name: 'More People',
+    name: 'Connect with More People',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+      'Engage with a growing community of users. Collaborate, share experiences, and discover opportunities like never before.',
     icon: UserGroupIcon,
   },
   {
-    name: 'Available Time Slots',
+    name: 'Flexible Time Slots',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      'Choose from a variety of convenient time slots that fit your schedule. We prioritize flexibility to make planning effortless.',
     icon: ArrowPathIcon,
   },
   {
-    name: 'Advanced Searchability',
+    name: 'Advanced Search',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'Quickly find what you’re looking for with our powerful search tools. Filter by your preferences and discover tailored results in no time.',
     icon: MagnifyingGlassIcon,
   },
 ];
+
 
 export default function Grid() {
   return (
@@ -44,8 +45,7 @@ export default function Grid() {
             Ezy-Parking is a parking service with awesome features
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+           
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

@@ -10,24 +10,25 @@ import "slick-carousel/slick/slick-theme.css"
 
 const reviews = [
   {
-    text: "“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”",
+    text: "“Using this platform has been a game-changer for me. It’s so intuitive and efficient—I’ve saved so much time and effort. Highly recommended!”",
     name: "Rahul Yadav",
     role: "Student",
-    image: icon
+    image: icon,
   },
   {
-    text: "“Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.”",
+    text: "“As a developer, I appreciate the seamless functionality and advanced features. It’s exactly what I needed to streamline my work and stay organized.”",
     name: "Pooja Sharma",
     role: "Developer",
-    image: icon
+    image: icon,
   },
   {
-    text: "“Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.”",
+    text: "“This platform offers a perfect blend of creativity and usability. It’s been a valuable tool in enhancing my productivity and delivering better designs.”",
     name: "Ankit Singh",
     role: "Designer",
-    image: icon
-  }
-]
+    image: icon,
+  },
+];
+
 
 const Testimonial = () => {
   const settings = {

@@ -6,26 +6,42 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   {
-    question: "What's the best thing about EzParking?",
+    question: "What makes EzParking the best parking solution?",
     answer:
-      "EzParking provides a better Parking Solution ",
+      "EzParking offers a seamless parking experience with features like real-time availability, easy reservation, and secure payment options. We prioritize convenience and efficiency for all users.",
   },
   {
-    question: 'How do I get started?',
+    question: 'How do I get started with EzParking?',
     answer:
-      'You can get started by signing up for a free account and start using the service.',
+      'Getting started is easy! Simply sign up for a free account, enter your vehicle details, and you can start reserving parking spots instantly. No hassle, just park and go!',
   },
   {
-    question: 'Can I use EzParking for my business?',
+    question: 'Can I use EzParking for my business or commercial needs?',
     answer:
-      'Yes, you can use EzParking for your business. We have a special plan for businesses.',
+      'Absolutely! EzParking offers customized solutions for businesses, including bulk parking space reservations and special pricing plans. Contact us for more details about our business services.',
   },
   {
-    question: 'How do I get in touch with support?',
+    question: 'How do I contact EzParking support if I need assistance?',
     answer:
-      'You can get in touch with support by sending an email to get support'}
-   
-]
+      'If you need any help, our support team is available 24/7. You can reach out to us via email at support@ezparking.com, or use the live chat feature on our website for instant assistance.',
+  },
+  {
+    question: 'What payment methods does EzParking accept?',
+    answer:
+      'EzParking accepts all major credit and debit cards, as well as popular digital payment methods such as PayPal, Apple Pay, and Google Pay, ensuring a secure and hassle-free transaction process.',
+  },
+  {
+    question: 'Can I cancel or modify my parking reservation?',
+    answer:
+      'Yes! You can easily modify or cancel your reservation through the app or website up to 24 hours before your booked time. A small cancellation fee may apply depending on the booking terms.',
+  },
+  {
+    question: 'Is EzParking available in my city?',
+    answer:
+      'EzParking is available in multiple cities nationwide. You can check availability in your area by visiting our app or website and entering your location details.',
+  },
+];
+
 
 export default function Example() {
   return (
