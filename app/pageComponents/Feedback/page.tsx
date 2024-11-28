@@ -7,7 +7,7 @@ const Feedback = () => {
   const [email, setEmail] = useState('');
   const [rating, setRating] = useState<number | null>(null);
   const [review, setReview] = useState('');
-  const [message, setMessage] = useState<string | null>(null); // For success/error messages
+  const [message, setMessage] = useState<string | null>(null);  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,9 +25,8 @@ const Feedback = () => {
 
       if (response.ok) {
         const result = await response.json();
-        setMessage(result.message); // Display success message
-        // Reset form fields after successful submission
-        setName('');
+        setMessage(result.message);  
+       setName('');
         setEmail('');
         setRating(null);
         setReview('');

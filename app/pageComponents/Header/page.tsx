@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation' // Import usePathname
-import Link from 'next/link' // Import Link for navigation
+import { usePathname } from 'next/navigation'  
+import Link from 'next/link' 
 
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -12,9 +12,8 @@ import Logo from "../../icons/paramarsh.png"
 
 const navigation = [
   { name: 'Feedback', href: '/feedback' },
-  { name: 'Features', href: '/features' },
-  { name: 'Events', href: '/eventspage' },
-  { name: 'Pricing', href: '/pricing' },
+  {name: 'Booking Page', href: '/booking'}
+  
 ]
 
 export default function Header() {
@@ -130,7 +129,7 @@ export default function Header() {
         </Dialog>
       </header>
 
-      {/* Conditionally render the rest of the layout based on the path */}
+     
       {!navbarOnlyRoutes.includes(pathname) && (
         <div className="relative isolate px-6 pt-14 lg:px-8">
           <div
