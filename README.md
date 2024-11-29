@@ -21,9 +21,9 @@
     <br />
     <a href="https://github.com/biratdatta/ezpark-next-app">Frontend</a>
     ·
-    <a href=" https://github.com/biratdatta/ezpark-backend">Backend</a>
+    <a href="https://github.com/biratdatta/ezpark-backend">Backend</a>
     ·
-    <a href="https://github.com/biratdatta/ezpark-cv">CV</a>
+    <a href="https://github.com/computervisioneng/parking-space-counter">CV</a>
   </p>
 </div>
 
