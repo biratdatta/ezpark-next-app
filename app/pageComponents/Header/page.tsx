@@ -36,6 +36,7 @@ export default function Header() {
   '/product/10',
   '/pricing',
   '/eventspage',
+  '/booking',
   '/search'
 ]
 
@@ -162,8 +163,7 @@ export default function Header() {
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
+                 We are a team of passionate individuals who are dedicated to providing the best parking experience to our customers. We are committed to providing the best parking experience to our customers.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link href="/search" legacyBehavior>

@@ -26,7 +26,7 @@ const productData = {
       { name: '10AM', inStock: false },
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
-      { name: '4PM', inStock: true },
+      { name: '4PM', inStock: false },
       { name: '6PM', inStock: false },
     ],
     description: 'Parking space for all types of vehicles.',
@@ -45,7 +45,7 @@ const productData = {
       { src: '/images/parking4.jpg', alt: 'Image 4' },
     ],
     sizes: [
-      { name: '10AM', inStock: false },
+      { name: '10AM', inStock: true },
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
@@ -58,7 +58,7 @@ const productData = {
   },
   '/product/3': {
     name: 'Cubbon Park',
-    price: '₹34',
+    price: '₹44',
     googleMapsLink: 'https://www.google.com/maps/place/Shri+Ch%C4%81marajendra+(Cubbon)+Park/@12.9769779,77.5944986,17.54z/data=!4m6!3m5!1s0x3bae1673e7d0672f:0xc62ca5a6e943dfb8!8m2!3d12.9779291!4d77.5951549!16zL20vMGJtN2Q1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -71,7 +71,7 @@ const productData = {
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
-      { name: '6PM', inStock: false },
+      { name: '6PM', inStock: true },
     ],
     description: 'Parking space for all types of vehicles.',
     highlights: ['Good security', 'Spacious', 'Easy access'],
@@ -80,7 +80,7 @@ const productData = {
   },
  '/product/4': {
     name: 'Indranagar',
-    price: '₹34',
+    price: '₹54',
     googleMapsLink: 'https://www.google.com/maps/place/Indiranagar,+Bengaluru,+Karnataka/@12.9710555,77.6379537,19.89z/data=!4m6!3m5!1s0x3bae16a418770391:0xb50f46b826501036!8m2!3d12.9783692!4d77.6408356!16zL20vMDZ5M3Zj?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -89,7 +89,7 @@ const productData = {
       { src: '/images/parking4.jpg', alt: 'Image 4' },
     ],
     sizes: [
-      { name: '10AM', inStock: false },
+      { name: '10AM', inStock: true },
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
@@ -102,7 +102,7 @@ const productData = {
   },
   '/product/5': {
     name: 'Jayanagar',
-    price: '₹34',
+    price: '₹46',
     googleMapsLink: ' https://www.google.com/maps/place/Jayanagar,+Bengaluru,+Karnataka/@12.9290492,77.5835672,16.12z/data=!4m6!3m5!1s0x3bae15986765d7d9:0xbba2fea7014e5087!8m2!3d12.9308107!4d77.5838577!16zL20vMDRjMzBx?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -112,7 +112,7 @@ const productData = {
     ],
     sizes: [
       { name: '10AM', inStock: false },
-      { name: '12PM', inStock: true },
+      { name: '12PM', inStock: false },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
       { name: '6PM', inStock: false },
@@ -124,7 +124,7 @@ const productData = {
   },
   '/product/6': {
     name: 'Kormangala',
-    price: '₹34',
+    price: '₹60',
     googleMapsLink: 'https://www.google.com/maps/place/Koramangala,+Bengaluru,+Karnataka/@12.933864,77.6267024,21z/data=!4m6!3m5!1s0x3bae144ed898fc2d:0x1681f38e8c00ae56!8m2!3d12.9352403!4d77.624532!16zL20vMDZibTR6?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -136,7 +136,7 @@ const productData = {
       { name: '10AM', inStock: false },
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
-      { name: '4PM', inStock: true },
+      { name: '4PM', inStock: false },
       { name: '6PM', inStock: false },
     ],
     description: 'Parking space for all types of vehicles.',
@@ -146,7 +146,7 @@ const productData = {
   },
   '/product/7': {
     name: 'Sarjapur',
-    price: '₹34',
+    price: '₹50',
     googleMapsLink: 'https://www.google.com/maps/place/Motherhood+parking/@12.9109118,77.6818431,17z/data=!4m10!1m2!2m1!1sSarjapur+Main+Rd+parking!3m6!1s0x3bae130c896a93db:0xb4d832230ae54fdd!8m2!3d12.9185716!4d77.6726076!15sChhTYXJqYXB1ciBNYWluIFJkIHBhcmtpbmdaGiIYc2FyamFwdXIgbWFpbiByZCBwYXJraW5nkgELcGFya2luZ19sb3SaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTTJiRFZMVWtobkVBReABAPoBBAgAED8!16s%2Fg%2F11hzv0nfcm?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -155,7 +155,7 @@ const productData = {
       { src: '/images/parking4.jpg', alt: 'Image 4' },
     ],
     sizes: [
-      { name: '10AM', inStock: false },
+      { name: '10AM', inStock: true },
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
@@ -168,7 +168,7 @@ const productData = {
   },
   '/product/8': {
     name: 'Lal Bagh- Spot B',
-    price: '₹34',
+    price: '₹20',
     googleMapsLink: 'https://www.google.com/maps/place/WHXR%2BPF7+Lalbagh+Parking,+Lal+Bagh+Rd,+Mavalli,+Bengaluru,+Karnataka+560004/@12.9493785,77.5882535,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae15c6ad8ea68d:0x20820f0f170c9ca8!8m2!3d12.9492854!4d77.5912237!16s%2Fg%2F11cknf599c?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -178,8 +178,8 @@ const productData = {
     ],
     sizes: [
       { name: '10AM', inStock: false },
-      { name: '12PM', inStock: true },
-      { name: '2PM', inStock: true },
+      { name: '12PM', inStock: false },
+      { name: '2PM', inStock: false },
       { name: '4PM', inStock: true },
       { name: '6PM', inStock: false },
     ],
@@ -190,7 +190,7 @@ const productData = {
   },
   '/product/9': {
     name: 'NS Palya',
-    price: '₹34',
+    price: '₹19',
     googleMapsLink: 'https://www.google.com/maps/place/Parking/@12.9493777,77.5702288,14z/data=!4m10!1m2!2m1!1sNS+Palya+Parking!3m6!1s0x3bae1502c08d7713:0x219cfedd2186e137!8m2!3d12.9124534!4d77.6062749!15sChBOUyBQYWx5YSBQYXJraW5nkgEUcHVibGljX3Bhcmtpbmdfc3BhY2XgAQA!16s%2Fg%2F11c7ss02s1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -200,10 +200,10 @@ const productData = {
     ],
     sizes: [
       { name: '10AM', inStock: false },
-      { name: '12PM', inStock: true },
+      { name: '12PM', inStock: false },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
-      { name: '6PM', inStock: false },
+      { name: '6PM', inStock: true },
     ],
     description: 'Parking space for all types of vehicles.',
     highlights: ['Good security', 'Spacious', 'Easy access'],
@@ -212,7 +212,7 @@ const productData = {
   },
     '/product/10': {
     name: 'Sarjapur',
-    price: '₹34',
+    price: '₹14',
     googleMapsLink: 'https://www.google.com/maps/place/Car+Parking,Sarjapur+Cricket+Arena/@12.9493251,77.4260195,11z/data=!4m10!1m2!2m1!1sSarjapur+Parking!3m6!1s0x3bae73bd1966eba3:0x8f14362baf2fec0e!8m2!3d12.8695625!4d77.7588125!15sChBTYXJqYXB1ciBQYXJraW5nkgELcGFya2luZ19sb3TgAQA!16s%2Fg%2F11v67hql4v?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D',
     images: [
       { src: '/app/images/parking1.jpg', alt: 'Image 1' },
@@ -221,11 +221,11 @@ const productData = {
       { src: '/images/parking4.jpg', alt: 'Image 4' },
     ],
     sizes: [
-      { name: '10AM', inStock: false },
+      { name: '10AM', inStock: true },
       { name: '12PM', inStock: true },
       { name: '2PM', inStock: true },
       { name: '4PM', inStock: true },
-      { name: '6PM', inStock: false },
+      { name: '6PM', inStock: true },
     ],
     description: 'Parking space for all types of vehicles.',
     highlights: ['Good security', 'Spacious', 'Easy access'],

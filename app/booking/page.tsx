@@ -1,11 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
+import Header from '../pageComponents/Header/page';
 
 const BookingHistory = () => {
   const [bookings, setBookings] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [bookingToCancel, setBookingToCancel] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
     const storedBookings = localStorage.getItem('parkingBookings');
@@ -14,6 +17,21 @@ const BookingHistory = () => {
     }
   }, []);
 
+  const handleCancelBooking = (booking) => {
+    setBookingToCancel(booking);
+    setIsDialogOpen(true);
+  };
+
+  const confirmCancelBooking = () => {
+    const updatedBookings = bookings.filter(
+      booking => booking.reference !== bookingToCancel.reference
+    );
+    setBookings(updatedBookings);
+    localStorage.setItem('parkingBookings', JSON.stringify(updatedBookings));
+    setIsDialogOpen(false);
+    setBookingToCancel(null);
+  };
+
   const filteredBookings = bookings.filter(booking => 
     booking.reference.toLowerCase().includes(searchTerm.toLowerCase()) ||
     booking.location.toLowerCase().includes(searchTerm.toLowerCase())
@@ -21,6 +39,7 @@ const BookingHistory = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <Header/>
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header Section */}
         <div className="p-6 bg-white border-b border-gray-200">
@@ -97,8 +116,13 @@ const BookingHistory = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      <button className="text-blue-600 hover:text-blue-900 mr-4">View</button>
-                      <button className="text-red-600 hover:text-red-900">Cancel</button>
+                     
+                      <button 
+                        onClick={() => handleCancelBooking(booking)}
+                        className="text-red-600 hover:text-red-900"
+                      >
+                        Cancel
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -115,6 +139,67 @@ const BookingHistory = () => {
             </div>
           )}
         </div>
+
+        {/* Custom Dialog using Tailwind */}
+        {isDialogOpen && (
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            {/* Backdrop */}
+            <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onClick={() => setIsDialogOpen(false)}></div>
+            
+            {/* Dialog */}
+            <div className="flex min-h-full items-center justify-center p-4">
+              <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:max-w-lg w-full">
+                {/* Close button */}
+                <button
+                  onClick={() => setIsDialogOpen(false)}
+                  className="absolute right-4 top-4 text-gray-400 hover:text-gray-500"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                {/* Dialog content */}
+                <div className="bg-white px-4 pt-5 pb-4 sm:p-6">
+                  <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                    <h3 className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                      Cancel Booking
+                    </h3>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-500 mb-4">
+                        Are you sure you want to cancel this booking?
+                      </p>
+                      {bookingToCancel && (
+                        <div className="mt-4 space-y-2 text-sm text-gray-600">
+                          <p><span className="font-semibold">Reference:</span> {bookingToCancel.reference}</p>
+                          <p><span className="font-semibold">Date:</span> {bookingToCancel.date}</p>
+                          <p><span className="font-semibold">Location:</span> {bookingToCancel.location}</p>
+                          <p><span className="font-semibold">Time Slot:</span> {bookingToCancel.timeSlot}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dialog actions */}
+                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                  <button
+                    type="button"
+                    onClick={confirmCancelBooking}
+                    className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                  >
+                    Confirm Cancellation
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsDialogOpen(false)}
+                    className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Footer Section with Pagination */}
         {filteredBookings.length > 0 && (
